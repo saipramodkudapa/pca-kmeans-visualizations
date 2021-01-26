@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Fifa Attribute Analytics </title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for ('static', filename='style.css') }}">
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+<center>
+    <h1>CSE 564 - Visualization Lab 2</h1>
+    <h2>Data Clustering and Dimension Reduction on FIFA Player Attributes</h2>
+</center>
+<hr>
+ <div class="row" >
+     <div class="dropdown">
+        <select id="map2" onchange="ddChange()">
+            <option value="Select Task">Select Task</option>
+            <option value="screeplot_unsampled">Scree plot for raw data</option>
+            <option value="screeplot_random">Scree plot for randomly sampled data</option>
+            <option value="screeplot_stratified">Scree plot for stratified sampled data</option>
+            <option value="pc1_pc2_plot_unsampled">PC1 Vs PC2 plot for raw data</option>
+            <option value="pc1_pc2_plot_random">PC1 Vs PC2 plot for randomly sampled data</option>
+            <option value="pc1_pc2_plot_stratified">PC1 Vs PC2 plot for stratified sampled data</option>
+            <option value="mds_euclidean_unsampled">MDS - Euclidean for raw data</option>
+            <option value="mds_euclidean_random">MDS - Euclidean for randomly sampled data</option>
+            <option value="mds_euclidean_stratified">MDS - Euclidean for stratified sampled data</option>
+            <option value="mds_correlation_unsampled">MDS - Correlation for raw data</option>
+            <option value="mds_correlation_random">MDS - Correlation for randomly sampled data</option>
+            <option value="mds_correlation_stratified">MDS - Correlation for stratified sampled data</option>            
+            <option value="scatterplot_matrix_unsampled">ScatterPlot Matrix for raw data</option>
+            <option value="scatterplot_matrix_random">ScatterPlot Matrix for randomly sampled data</option>
+            <option value="scatterplot_matrix_stratified">ScatterPlot Matrix for stratified sampled data</option>
+        </select>
+     </div>
+ </div>
+
+ <div id ="chart"></div>
+<script src = "{{ url_for('static', filename='visualize.js')}}"></script>
+</body>
+</html>
